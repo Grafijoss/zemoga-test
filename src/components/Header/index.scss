@@ -1,0 +1,19 @@
+.wrrp-header {
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	.name-company {
+		font-size: 32px;
+		line-height: 100px;
+		font-weight: 400;
+		float: left;
+		width: 350px;
+	}
+	.nav-main {
+		background: yellow;
+		float: left;
+		height: 100px;
+		width: calc(100% - 350px);
+	}
+}
