@@ -41,16 +41,45 @@ class HomeComponent extends Component {
 	}
 
 	handleVotes(vote) {
-		console.log('este es el voto desde el padre');
-		console.log(vote);
 
 		let chars = this.state.dataChars.map(char => {
 			if (vote.id === char.id) {
-				let opc = this.context.opc === "like" ? "likeVotes" : "noLIkeVotes";
-
+				let opc = vote.opc === "like" ? "likeVotes" : "noLIkeVotes";
+				char[opc] = char[opc] + 1;
 			}
-			return
+			return char
 		})
+
+		this.setState({
+			dataChars: chars
+		});
+
+		const testChars = this.state.dataChars.filter(char => {
+			return vote.id === char.id
+		})
+
+
+		const testChar = testChars[0];
+		const total = testChar.noLIkeVotes + testChar.likeVotes
+
+		// console.log('Este es el personaje');
+		// console.log(testChar);
+		console.log('este es el total');
+		console.log(total);
+
+		console.log('este es el testChar.noLIkeVotes');
+		console.log(testChar.noLIkeVotes);
+		console.log(`${Math.ceil(100 * testChar.noLIkeVotes) / total}%`);
+
+		console.log('este es el testChar.likeVotess');
+		console.log(testChar.likeVotes);
+		console.log(`${Math.ceil(100 * testChar.likeVotes) / total}%`);
+
+
+
+
+
+		console.log();
 
 
 	}

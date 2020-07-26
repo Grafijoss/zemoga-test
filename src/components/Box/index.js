@@ -8,6 +8,7 @@ class BoxComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			voted: false,
 			selected: null
 		};
 
@@ -24,15 +25,26 @@ class BoxComponent extends Component {
 	}
 
 	voteFun() {
+		this.setState({
+			voted: true
+		})
 		this.props.handleVotes({
 			id: this.props.dataChar.id,
 			opc: this.state.selected
 		});
 	}
 
+	voteAgain() {
+		this.setState({
+			selected: null,
+			voted: false
+		})
+	}
+
 	render() {
 
 		const {
+			voted,
 			selected
 		} = this.state;
 
@@ -46,6 +58,11 @@ class BoxComponent extends Component {
 			noLIkeVotes
 		} = this.props.dataChar;
 
+		const totalVotes = noLIkeVotes + likeVotes;
+
+		const percentageLike = Math.round(Math.ceil(100 * likeVotes) / totalVotes);
+		const percentageNoLike = Math.round(Math.ceil(100 * noLIkeVotes) / totalVotes);
+
 		return (
 			<div className="wrrp-box">
 				<img
@@ -56,12 +73,14 @@ class BoxComponent extends Component {
 				<div className="wrrp-box_content">
 
 					<div className="wrrp-box_titles">
-						<div className="button-vote bg-like">
-							<img
-								alt="test"
-								src={LIKE}
-							></img>
-						</div>
+						{totalVotes > 0 ? (
+							<div className={`button-vote ${likeVotes > noLIkeVotes ? "bg-like" : "bg-nolike"}`}>
+								<img
+									alt="test"
+									src={likeVotes > noLIkeVotes ? LIKE : NO_LIKE}
+								></img>
+							</div>
+						) : null}
 						<div className="titles-group">
 							<p className="name">
 								{name}
@@ -79,53 +98,90 @@ class BoxComponent extends Component {
 					</div>
 
 					<div className="wrrp-box_buttons">
-						<button
-							// className="button-vote bg-like"
-							className={`button-vote bg-like ${selected === "like" ? "active" : null}`}
-							onClick={() => this.selectedFun("like")}
-						>
-							<img
-								alt="test"
-								src={LIKE}
-							></img>
-						</button>
-						<button
-							// className="button-vote bg-nolike"
-							className={`button-vote bg-nolike ${selected === "nolike" ? "active" : null}`}
-							onClick={() => this.selectedFun("nolike")}
-						>
-							<img
-								alt="test"
-								src={NO_LIKE}
-							></img>
-						</button>
-						{
-							!!selected ? (
+
+						{!voted ? (
+							<React.Fragment>
+								<button
+									className={`button-vote bg-like ${selected === "like" ? "active" : null}`}
+									onClick={() => this.selectedFun("like")}
+								>
+									<img
+										alt="test"
+										src={LIKE}
+									></img>
+								</button>
+								<button
+									className={`button-vote bg-nolike ${selected === "nolike" ? "active" : null}`}
+									onClick={() => this.selectedFun("nolike")}
+								>
+									<img
+										alt="test"
+										src={NO_LIKE}
+									></img>
+								</button>
+								{
+									!!selected ? (
+										<button
+											className="button-border"
+											onClick={this.voteFun.bind(this)}
+										>
+											Vote now
+										</button>
+									) : null
+								}
+							</React.Fragment>
+						) : (
 								<button
 									className="button-border"
-									onClick={this.voteFun.bind(this)}
+									onClick={this.voteAgain.bind(this)}
 								>
-									Vote now
+									Vote again
 								</button>
-							) : null
-						}
+							)}
+
 					</div>
 
 					<div className="wrrp-box_votes">
-						<div className="percentage bg-like">
-							<img
-								alt="test"
-								src={LIKE}
-							></img>
-							<p>50</p>
-						</div>
-						<div className="percentage bg-nolike">
-							<img
-								alt="test"
-								src={NO_LIKE}
-							></img>
-							<p>50</p>
-						</div>
+						{
+							percentageLike > 0 ? (
+								<div
+									className="percentage bg-like"
+									style={{
+										width: `${percentageLike}%`
+									}}
+								>
+									{percentageLike > 24 ? (
+										<React.Fragment>
+											<img
+												alt="test"
+												src={LIKE}
+											></img>
+											<p>{percentageLike}</p>
+										</React.Fragment>
+									) : null}
+								</div>
+							) : null
+						}
+						{
+							percentageNoLike > 0 ? (
+								<div
+									className="percentage bg-nolike"
+									style={{
+										width: `${percentageNoLike}%`
+									}}
+								>
+									{percentageNoLike > 24 ? (
+										<React.Fragment>
+											<img
+												alt="test"
+												src={NO_LIKE}
+											></img>
+											<p>{percentageNoLike}</p>
+										</React.Fragment>
+									) : null}
+								</div>
+							) : null
+						}
 						<div className="clear"></div>
 					</div>
 

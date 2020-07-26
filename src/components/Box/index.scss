@@ -41,10 +41,13 @@
 
 	&_votes {
 		height: 50px;
+		position: relative;
+		width: 100%;
 		.percentage {
-			float: left;
 			height: 50px;
-			position: relative;
+			position: absolute;
+			top: 0;
+			transition: all 0.3s ease;
 			width: 50%;
 			img {
 				height: 30px;
@@ -60,16 +63,16 @@
 					}
 				}
 			&.bg-like {
+				left: 0;
 				padding-left: 60px;
-				position: relative;
 				text-align: left;
 				img {
 					left: 15px;
 				}
 			}
 			&.bg-nolike {
+				right: 0;
 				padding-right: 60px;
-				position: relative;
 				text-align: right;
 				img {
 					right: 15px;
@@ -140,7 +143,7 @@
 			}
 		}
 		.button-vote {
-			bottom: 20px;
+			bottom: 45px;
 			position: absolute;
 			left: 0;
 		}
