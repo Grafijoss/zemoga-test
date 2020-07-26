@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"name": "Kanye West",
+		"work": "Entertaiment",
+		"date": "20200701",
+		"description": "We have purged your fear. You are ready to Iead these men. You are ready to become a member of the League of Shadows.",
+		"thumb": "/images/profiles/char_1.png",
+		"likeVotes": 0,
+		"noLIkeVotes": 0
+	},
+	{
+		"id": 2,
+		"name": "Mark Zuckenberg",
+		"work": "Bussines",
+		"date": "20200701",
+		"description": "We have purged your fear. You are ready to Iead these men. You are ready to become a member of the League of Shadows.",
+		"thumb": "/images/profiles/char_2.png",
+		"likeVotes": 0,
+		"noLIkeVotes": 0
+	},
+	{
+		"id": 3,
+		"name": "Cristina Fernández de Kirchner",
+		"work": "Politics",
+		"date": "20200701",
+		"description": "We have purged your fear. You are ready to Iead these men. You are ready to become a member of the League of Shadows.",
+		"thumb": "/images/profiles/char_3.png",
+		"likeVotes": 0,
+		"noLIkeVotes": 0
+	},
+	{
+		"id": 4,
+		"name": "Malala Yousafzai",
+		"work": "Entertaiment",
+		"date": "20200701",
+		"description": "We have purged your fear. You are ready to Iead these men. You are ready to become a member of the League of Shadows.",
+		"thumb": "/images/profiles/char_4.png",
+		"likeVotes": 0,
+		"noLIkeVotes": 0
+	}
+]

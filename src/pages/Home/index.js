@@ -1,18 +1,64 @@
 import React, { Component } from "react";
 import BoxComponent from "../../components/Box";
+
 import "./index.scss";
 
 class HomeComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			dataChars: []
 		};
+
+		this.handleVotes = this.handleVotes.bind(this);
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
+
+
+		const DATA = await this.loadData();
+		this.setState({
+			dataChars: JSON.parse(JSON.stringify(DATA))
+		})
+
+		// try {
+		// 	const DATA = await this.loadData()
+		// 	console.log(DATA);
+		// 	this.setState({
+		// 		dataChars: JSON.parse(JSON.stringify(DATA))
+		// 	})
+		// } catch (err) {
+		// 	console.log('hay un error');
+		// 	console.log(err);
+		// }
+	}
+
+
+	async loadData() {
+		const RESPONSECHARS = await fetch(`data/data.json`);
+		const CHARS = await RESPONSECHARS.json();
+		return CHARS;
+	}
+
+	handleVotes(vote) {
+		console.log('este es el voto desde el padre');
+		console.log(vote);
+
+		let chars = this.state.dataChars.map(char => {
+			if (vote.id === char.id) {
+				let opc = this.context.opc === "like" ? "likeVotes" : "noLIkeVotes";
+
+			}
+			return
+		})
+
+
 	}
 
 	render() {
+
+		const { dataChars } = this.state;
+
 		return (
 			<div className="wrrp-home">
 				<section
@@ -31,7 +77,7 @@ class HomeComponent extends Component {
 										He's talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up)
 									</p>
 									<div className="top_30"></div>
-									<a class="wiki">
+									<a className="wiki">
 										<img
 											alt="test"
 											src={`${process.env.PUBLIC_URL}/images/icons/icon-wiki.png`}
@@ -80,7 +126,7 @@ class HomeComponent extends Component {
 								<hgroup>
 									<h3>Speak out. Be heard.</h3>
 									<div className="clear"></div>
-									<h2 class="msg-title">Be counted</h2>
+									<h2 className="msg-title">Be counted</h2>
 								</hgroup>
 							</div>
 							<div className="instructions_description">
@@ -105,18 +151,20 @@ class HomeComponent extends Component {
 						</hgroup>
 						<div className="top_40"></div>
 						<div className="voting-boxes">
-							<div className="voting-boxes_box">
-								<BoxComponent></BoxComponent>
-							</div>
-							<div className="voting-boxes_box">
-								<BoxComponent></BoxComponent>
-							</div>
-							<div className="voting-boxes_box">
-								<BoxComponent></BoxComponent>
-							</div>
-							<div className="voting-boxes_box">
-								<BoxComponent></BoxComponent>
-							</div>
+
+							{
+								dataChars.map(char => {
+									return (
+										<div className="voting-boxes_box" key={char.id} >
+											<BoxComponent
+												dataChar={char}
+												handleVotes={(opc) => this.handleVotes(opc)}
+											/>
+										</div>
+									)
+								})
+							}
+
 							<div className="clear"></div>
 						</div>
 						<div className="clear"></div>

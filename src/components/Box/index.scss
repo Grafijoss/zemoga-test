@@ -90,8 +90,13 @@
 		}
 		.button-vote {
 			height: 32px;
+			margin-bottom: 5px;
+			margin-top: 5px;
 			position: relative;
 			width: 32px;
+			&.active, &:hover {
+				border: solid 2px white;
+			}
 			img {
 				left: 50%;
 				position: absolute;
