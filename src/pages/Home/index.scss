@@ -50,12 +50,6 @@
 					float: left;
 					height: 80px;
 					width: 50%;
-					&.like{
-						background: rgba(28, 187, 180, 0.7);
-					}
-					&.nolike{
-						background: rgba(255, 173, 29, 0.7);
-					}
 				}
 			}
 		}
@@ -114,7 +108,7 @@
 			}
 		}
 	}
-	.wrrp-instructions {
+	.instructions {
 		background: #ebebeb;
 		padding: 26px;
 		position: relative;
@@ -148,6 +142,46 @@
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 1;
+		}
+	}
+	.rulings {
+		h2 {
+			font-size: 40px;
+			font-weight: 300;
+		}
+		.voting-boxes {
+			margin-left: -40px;
+			width: calc(100% + 40px);
+			&_box {
+				float: left;
+				margin-bottom: 40px;
+				margin-left: 40px;
+				width: calc(50% - 40px);
+			}
+		}
+	}
+	.add-anyone {
+		background-image: url("/images/footer/bg-closing.png");
+		padding: 15px 30px;
+		&_cols{
+			align-items: center;;
+			display: flex;
+
+		}
+		&_title {
+			font-size: 30px;
+			line-height: 32px;
+			width: calc(100% - 212px);
+		}
+		&_button {
+			width: 212px;
+			button {
+				border: solid 2px;
+				font-size: 20px;
+				font-weight: 400;
+				padding: 15px 0;
+				width: 100%;
+			}
 		}
 	}
 }

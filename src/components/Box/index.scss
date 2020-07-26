@@ -1,0 +1,145 @@
+.wrrp-box {
+	color: white;
+	position: relative;
+	width: 100%;
+	&::before {
+		background: rgb(0,0,0);
+		background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+	img.char {
+		width: 100%;
+	}
+	&_content {
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 2;
+	}
+
+	.button-vote {
+		height: 32px;
+		position: relative;
+		width: 32px;
+		img {
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 22px;
+		}
+	}
+
+	&_votes {
+		height: 50px;
+		.percentage {
+			float: left;
+			height: 50px;
+			position: relative;
+			width: 50%;
+			img {
+				height: 30px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			p {
+					font-size: 30px;
+					line-height: 48px;
+					&::after {
+						content: "%";
+					}
+				}
+			&.bg-like {
+				padding-left: 60px;
+				position: relative;
+				text-align: left;
+				img {
+					left: 15px;
+				}
+			}
+			&.bg-nolike {
+				padding-right: 60px;
+				position: relative;
+				text-align: right;
+				img {
+					right: 15px;
+				}
+			}
+		}
+	}
+
+	&_buttons {
+		padding-bottom: 35px;
+		padding-left: 40px;
+		button {
+			display: inline-block;
+			vertical-align: middle;
+			& + button {
+				margin-left: 10px;
+			}
+		}
+		.button-vote {
+			height: 32px;
+			position: relative;
+			width: 32px;
+			img {
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 22px;
+			}
+		}
+		.button-border {
+			border: solid 1px white;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 38px;
+			padding: 0 25px;
+		}
+	}
+
+	&_description {
+		height: 56px;
+		padding-left: 40px;
+		p {
+			font-size: 16px;
+			line-height: 18px;
+		}
+	}
+
+	&_titles {
+		padding-bottom: 20px;
+		padding-left: 40px;
+		position: relative;
+		.name {
+			font-size: 45px;
+			font-weight: 600;
+			line-height: 47px;
+		}
+		.desc {
+			font-size: 14px;
+			line-height: 18px;
+			strong {
+				font-weight: 600;
+			}
+		}
+		.button-vote {
+			bottom: 20px;
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	
+}

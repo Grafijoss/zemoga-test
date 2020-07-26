@@ -1,0 +1,31 @@
+.main-footer {
+	font-size: 12px;
+	.container {
+		background:  url("/images/footer/dotted.png") repeat-x top;
+	}
+	.content {
+		display: flex;
+		justify-content: space-between;
+	}
+	&_site-map {
+		text-align: left;
+		button {
+			line-height: 80px;
+			& + button {
+				margin-left: 25px;
+			}
+		}
+	}
+	&_social {
+		display: flex;
+		align-items: center; 
+		p {
+			padding-right: 20px;
+		}
+		button {
+			& + button {
+				padding-left: 20px;
+			}
+		}
+	}
+}

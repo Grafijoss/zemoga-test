@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BoxComponent from "../../components/Box";
 import "./index.scss";
 
 class HomeComponent extends Component {
@@ -42,13 +43,13 @@ class HomeComponent extends Component {
 								</hgroup>
 							</div>
 							<div className="feautered-box_buttons">
-								<button className="like">
+								<button className="bg-like">
 									<img
 										alt="test"
 										src={`${process.env.PUBLIC_URL}/images/icons/thumb.png`}
 									></img>
 								</button>
-								<button className="nolike">
+								<button className="bg-nolike">
 									<img
 										alt="test"
 										src={`${process.env.PUBLIC_URL}/images/icons/thumb_down.png`}
@@ -73,30 +74,68 @@ class HomeComponent extends Component {
 				</section>
 				<div className="top_40"></div>
 				<div className="container">
-					<section className="wrrp-instructions">
+					<section className="instructions">
 						<div className="content">
-							<div className="wrrp-instructions_titles">
+							<div className="instructions_titles">
 								<hgroup>
 									<h3>Speak out. Be heard.</h3>
 									<div className="clear"></div>
 									<h2 class="msg-title">Be counted</h2>
 								</hgroup>
 							</div>
-							<div className="wrrp-instructions_description">
+							<div className="instructions_description">
 								<p>
 									Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.
 								</p>
 							</div>
 						</div>
-						<button className="wrrp-instructions_close">
+						<button className="instructions_close">
 							<img
 								alt="test"
 								src={`${process.env.PUBLIC_URL}/images/close.png`}
 							></img>
 						</button>
 					</section>
+					<div className="top_40"></div>
+					<section className="rulings">
+						<hgroup>
+							<h2>
+								Previous Rulings
+							</h2>
+						</hgroup>
+						<div className="top_40"></div>
+						<div className="voting-boxes">
+							<div className="voting-boxes_box">
+								<BoxComponent></BoxComponent>
+							</div>
+							<div className="voting-boxes_box">
+								<BoxComponent></BoxComponent>
+							</div>
+							<div className="voting-boxes_box">
+								<BoxComponent></BoxComponent>
+							</div>
+							<div className="voting-boxes_box">
+								<BoxComponent></BoxComponent>
+							</div>
+							<div className="clear"></div>
+						</div>
+						<div className="clear"></div>
+					</section>
+					<section className="add-anyone">
+						<div className="add-anyone_cols">
+							<div className="add-anyone_title">
+								<p>
+									Is there anyone else you would want us to add?
+								</p>
+							</div>
+							<div className="add-anyone_button">
+								<button>
+									Submite a Name
+								</button>
+							</div>
+						</div>
+					</section>
 				</div>
-
 			</div>
 		);
 	}
