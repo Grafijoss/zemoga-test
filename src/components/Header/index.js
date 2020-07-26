@@ -19,11 +19,30 @@ class HeaderComponent extends Component {
 						Rule of thumb.
 					</h1>
 					<nav className="nav-main">
-						<ul>
-							<li>
 
-							</li>
-						</ul>
+						<div className="item-nav">
+							<button>
+								Past Trials
+								</button>
+						</div>
+						<div className="item-nav">
+							<button>
+								How It Works
+								</button>
+						</div>
+						<div className="item-nav">
+							<button>
+								Log In / Sing In
+								</button>
+						</div>
+						<div className="item-nav search">
+							<button>
+								<img
+									alt="test"
+									src={`${process.env.PUBLIC_URL}/images/icons/icon-search.png`}
+								></img>
+							</button>
+						</div>
 					</nav>
 				</div>
 			</div>

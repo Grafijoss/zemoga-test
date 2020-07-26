@@ -1,3 +1,153 @@
 .wrrp-home {
-	margin-top: 100px;;
+	.featured-survey {
+		background: no-repeat center center;
+		background-size: cover;
+		height:100vh;
+		position: relative;
+		.container {
+			position: relative;
+			height: 100%;
+		}
+		.feautered-box {
+			color: white;
+			position: absolute;
+			transform: translateY(-50%);
+    	top: 50%;
+			width: calc(50% - 20px);
+			&_content {
+				background: rgba(112, 112, 112, 0.8);
+				float: left;
+				padding: 35px 45px 35px 30px;
+				position: relative;
+				width: 100%;
+				h1 {
+					font-size: 60px;
+				}
+				h3 {
+					font-size: 20px
+				}
+				h4 {
+					font-size: 16px;
+					font-weight: 200;
+					line-height: 18px;
+				}
+				p {
+					font-size: 21px;
+				}
+				a {
+					font-size: 14px;
+					text-decoration: underline;
+					img {
+						display: inline-block;
+						vertical-align: middle;
+						margin-right: 5px;
+						width: 16px;
+					}
+				}
+			}
+			&_buttons {
+				button {
+					float: left;
+					height: 80px;
+					width: 50%;
+					&.like{
+						background: rgba(28, 187, 180, 0.7);
+					}
+					&.nolike{
+						background: rgba(255, 173, 29, 0.7);
+					}
+				}
+			}
+		}
+		.deadline{
+			background: rgba(112, 112, 112, 0.3);
+			bottom: 0;
+			height: 50px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			&::after{
+				background: rgba(255, 255, 255, 0.7);
+				content: "";
+				height: 100%;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 50%;
+			}
+			&_info {
+				color: white;
+				float: left;
+				line-height: 50px;
+				width: 50%;
+				font-size: 13px;
+			}
+			&_closing{
+				font-size: 13px;
+				font-weight: 400;
+				float: left;
+				text-align: right;
+				padding-right: 15px;
+				width: calc(100% - 220px);
+			}
+			&_days{
+				background: rgba(255, 255, 255, 0.7);
+				color: #464646;
+				font-size: 36px;
+				float: left;
+				padding-left: 20px;
+				position: relative;
+				width: 220px;
+				&::before {
+					content: "";
+					border-width: 5px;
+					border-style: solid;
+					border-color: transparent transparent transparent rgba(112, 112, 112, 0.5);
+					left: 0;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				strong {
+					font-weight: 600;
+				}
+			}
+		}
+	}
+	.wrrp-instructions {
+		background: #ebebeb;
+		padding: 26px;
+		position: relative;
+		width: 100%;
+		.content {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+		}
+		&_titles {
+			width: 200px;
+			h3 {
+				font-size: 22px;
+				font-weight: 200;
+				line-height: 22px;
+			}
+			h2 {
+				font-size: 38px;
+				line-height: 38px;
+				font-weight: 600;
+			}
+		}
+		&_description {
+			padding: 0 30px 0 20px;
+			width: calc(100% - 200px);
+		}
+		&_close {
+			cursor: pointer;
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+		}
+	}
 }

@@ -1,19 +1,45 @@
 .wrrp-header {
+	color: white;
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: 10;
+	&::before{
+		background: rgb(0,0,0);
+		background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(251,251,251,0) 100%);
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: 100%;
+	}
+	.container {
+		position: relative;
+		z-index: 1;
+	}
 	.name-company {
 		font-size: 32px;
 		line-height: 100px;
 		font-weight: 400;
 		float: left;
+		margin: 0;
 		width: 350px;
 	}
 	.nav-main {
-		background: yellow;
+		align-items: center;
+		display: flex;
 		float: left;
 		height: 100px;
+		justify-content: flex-end;
 		width: calc(100% - 350px);
+		.item-nav {
+			padding:  0 26px;
+			&.search {
+				padding: 0;
+			}
+			.button {
+				cursor: pointer;
+			}
+		}
 	}
 }
