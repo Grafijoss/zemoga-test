@@ -9,6 +9,7 @@ No se cargan servicios externos, para generar la data podemos encontrar el **Moc
 │   ├── data/
 │   │   ├── data.json
 ```
+Para correr el proyeto usamos los scripts de **React** por defecto:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
