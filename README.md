@@ -9,6 +9,9 @@ No se cargan servicios externos, para generar la data podemos encontrar el **Moc
 │   ├── data/
 │   │   ├── data.json
 ```
+
+En el respositorio en contramos el branch **stylesDesktop** con la maquetación y los estilos para **desktop** y en **master** esta el desarrollo completo con el **responsive** para despositivos moviles.
+
 Para correr el proyeto usamos los scripts de **React** por defecto:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
