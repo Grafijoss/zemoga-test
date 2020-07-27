@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import BoxComponent from "../../components/Box";
 
+import { connect } from "react-redux";
+import * as charactersActions from "../../actions/charactersActions";
+
 import "./index.scss";
+
+const { setData: setCharacters } = charactersActions;
 
 class HomeComponent extends Component {
 	constructor(props) {
@@ -14,23 +19,21 @@ class HomeComponent extends Component {
 	}
 
 	async componentDidMount() {
+		let data = [];
+		if (!this.props.charactersReducer.chacarters.length) {
+			data = await this.loadData();
+			await this.props.setCharacters(JSON.parse(JSON.stringify(data)))
+				.then(() => {
+					return "Cargo informacion de los personajes";
+				})
+		} else {
+			data = this.props.charactersReducer.chacarters
+		}
 
-
-		const DATA = await this.loadData();
 		this.setState({
-			dataChars: JSON.parse(JSON.stringify(DATA))
-		})
+			dataChars: JSON.parse(JSON.stringify(data))
+		});
 
-		// try {
-		// 	const DATA = await this.loadData()
-		// 	console.log(DATA);
-		// 	this.setState({
-		// 		dataChars: JSON.parse(JSON.stringify(DATA))
-		// 	})
-		// } catch (err) {
-		// 	console.log('hay un error');
-		// 	console.log(err);
-		// }
 	}
 
 
@@ -40,7 +43,7 @@ class HomeComponent extends Component {
 		return CHARS;
 	}
 
-	handleVotes(vote) {
+	async handleVotes(vote) {
 
 		let chars = this.state.dataChars.map(char => {
 			if (vote.id === char.id) {
@@ -50,38 +53,12 @@ class HomeComponent extends Component {
 			return char
 		})
 
-		this.setState({
-			dataChars: chars
-		});
-
-		const testChars = this.state.dataChars.filter(char => {
-			return vote.id === char.id
-		})
-
-
-		const testChar = testChars[0];
-		const total = testChar.noLIkeVotes + testChar.likeVotes
-
-		// console.log('Este es el personaje');
-		// console.log(testChar);
-		console.log('este es el total');
-		console.log(total);
-
-		console.log('este es el testChar.noLIkeVotes');
-		console.log(testChar.noLIkeVotes);
-		console.log(`${Math.ceil(100 * testChar.noLIkeVotes) / total}%`);
-
-		console.log('este es el testChar.likeVotess');
-		console.log(testChar.likeVotes);
-		console.log(`${Math.ceil(100 * testChar.likeVotes) / total}%`);
-
-
-
-
-
-		console.log();
-
-
+		await this.props.setCharacters(chars)
+			.then(() => {
+				this.setState({
+					dataChars: chars
+				});
+			})
 	}
 
 	render() {
@@ -218,4 +195,18 @@ class HomeComponent extends Component {
 	}
 }
 
-export default HomeComponent;
+const mapStateToProps = ({ charactersReducer }) => {
+	return {
+		charactersReducer
+	};
+};
+
+const mapDispatchToProps = {
+	setCharacters
+};
+
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(HomeComponent);
