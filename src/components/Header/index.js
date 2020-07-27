@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom'
 import "./index.scss";
 
 class HeaderComponent extends Component {
@@ -7,6 +8,7 @@ class HeaderComponent extends Component {
 		this.state = {
 			openMenu: false
 		};
+
 	}
 
 	componentDidMount() {
@@ -18,28 +20,28 @@ class HeaderComponent extends Component {
 		})
 	}
 
+	closeMenuFn() {
+		this.setState({
+			openMenu: false
+		})
+	}
+
 	render() {
 		return (
 			<div className={`wrrp-header ${this.state.openMenu ? "open" : null}`}>
 				<div className="container">
 					<h1 className="name-company">
-						Rule of thumb.
+						<NavLink to="/" onClick={this.closeMenuFn.bind(this)}> Rule of thumb. </NavLink>
 					</h1>
 					<nav className="nav-main">
 						<div className="item-nav">
-							<button>
-								Past Trials
-								</button>
+							<NavLink to="/pasttrials" onClick={this.closeMenuFn.bind(this)}> Past Trials </NavLink>
 						</div>
 						<div className="item-nav">
-							<button>
-								How It Works
-								</button>
+							<NavLink to="/howwork" onClick={this.closeMenuFn.bind(this)}> How It Works </NavLink>
 						</div>
 						<div className="item-nav">
-							<button>
-								Log In / Sing In
-								</button>
+							<NavLink to="/login" onClick={this.closeMenuFn.bind(this)}> Log In / Sing In </NavLink>
 						</div>
 						<div className="item-nav search">
 							<button>
