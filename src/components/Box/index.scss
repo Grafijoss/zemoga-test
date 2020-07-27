@@ -54,12 +54,18 @@
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
+				@media (max-width: 1024px) {
+					height: 20px;
+				}
 			}
 			p {
 					font-size: 30px;
 					line-height: 48px;
 					&::after {
 						content: "%";
+					}
+					@media (max-width: 1024px) {
+						font-size: 18px;
 					}
 				}
 			&.bg-like {
@@ -69,6 +75,9 @@
 				img {
 					left: 15px;
 				}
+				@media (max-width: 1024px) {
+					padding-left: 40px;
+				}
 			}
 			&.bg-nolike {
 				right: 0;
@@ -76,6 +85,9 @@
 				text-align: right;
 				img {
 					right: 15px;
+				}
+				@media (max-width: 1024px) {
+					padding-right: 40px;
 				}
 			}
 		}
@@ -119,21 +131,34 @@
 
 	&_description {
 		height: 56px;
-		padding-left: 40px;
+		padding: 0 20px 0 40px;
 		p {
 			font-size: 16px;
 			line-height: 18px;
+		}
+		@media (max-width: 1024px) {
+			height: auto;
+			padding-bottom: 20px;
 		}
 	}
 
 	&_titles {
 		padding-bottom: 20px;
 		padding-left: 40px;
+		padding-right: 20px;
 		position: relative;
 		.name {
 			font-size: 45px;
 			font-weight: 600;
 			line-height: 47px;
+			@media (max-width: 1024px) {
+				font-size: 30px;
+				line-height: 32px;
+			}
+			@media (max-width: 480px) {
+				font-size: 28px;
+				line-height: 30px;
+			}
 		}
 		.desc {
 			font-size: 14px;
@@ -146,6 +171,10 @@
 			bottom: 45px;
 			position: absolute;
 			left: 0;
+			@media (max-width: 1024px) {
+				bottom: 20px;
+			}
+			
 		}
 	}
 

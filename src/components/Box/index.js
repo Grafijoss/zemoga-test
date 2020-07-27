@@ -51,7 +51,7 @@ class BoxComponent extends Component {
 		const {
 			name,
 			work,
-			date,
+			// date,
 			description,
 			thumb,
 			likeVotes,
@@ -150,7 +150,7 @@ class BoxComponent extends Component {
 										width: `${percentageLike}%`
 									}}
 								>
-									{percentageLike > 24 ? (
+									{percentageLike > 26 ? (
 										<React.Fragment>
 											<img
 												alt="test"
@@ -170,7 +170,7 @@ class BoxComponent extends Component {
 										width: `${percentageNoLike}%`
 									}}
 								>
-									{percentageNoLike > 24 ? (
+									{percentageNoLike > 26 ? (
 										<React.Fragment>
 											<img
 												alt="test"

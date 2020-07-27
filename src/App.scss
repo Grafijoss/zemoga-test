@@ -36,8 +36,12 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .container {
-	max-width: 1024px;
+	width: 1024px;
 	margin: 0 auto;
+	@media (max-width: 1080px) {
+		margin: 0 20px;
+		width: calc(100% - 40px);
+	}
 }
 
 .top {

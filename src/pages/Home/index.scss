@@ -22,6 +22,12 @@
 				width: 100%;
 				h1 {
 					font-size: 60px;
+					@media (max-width: 1024px) {
+						font-size: 36px;
+					}
+					@media (max-width: 480px) {
+						font-size: 30px;
+					}
 				}
 				h3 {
 					font-size: 20px
@@ -33,6 +39,9 @@
 				}
 				p {
 					font-size: 21px;
+					@media (max-width: 1024px) {
+						font-size: 18px;
+					}
 				}
 				a {
 					font-size: 14px;
@@ -50,7 +59,19 @@
 					float: left;
 					height: 80px;
 					width: 50%;
+					@media (max-width: 1024px) {
+						height: 50px;
+						img {
+							width: 30px;
+						}
+					}
 				}
+			}
+			@media (max-width: 1024px) {
+				max-width: 490px;
+				position: static;
+				transform: none;
+				width: 100%;
 			}
 		}
 		.deadline{
@@ -68,6 +89,9 @@
 				right: 0;
 				top: 0;
 				width: 50%;
+				@media (max-width: 1024px) {
+					width: 20px;
+				}
 			}
 			&_info {
 				color: white;
@@ -75,6 +99,9 @@
 				line-height: 50px;
 				width: 50%;
 				font-size: 13px;
+				@media (max-width: 1024px) {
+					width: 100%;
+				}
 			}
 			&_closing{
 				font-size: 13px;
@@ -83,6 +110,9 @@
 				text-align: right;
 				padding-right: 15px;
 				width: calc(100% - 220px);
+				@media (max-width: 1024px) {
+					width: 120px;
+				}
 			}
 			&_days{
 				background: rgba(255, 255, 255, 0.7);
@@ -105,7 +135,14 @@
 				strong {
 					font-weight: 600;
 				}
+				@media (max-width: 1024px) {
+					width: calc(100% - 120px);
+				}
 			}
+		}
+		@media (max-width: 1024px) {
+			height: auto;
+			padding: 100px 0 80px;
 		}
 	}
 	.instructions {
@@ -117,6 +154,9 @@
 			align-items: center;
 			display: flex;
 			justify-content: space-between;
+			@media (max-width: 740px) {
+				display: block;
+			}
 		}
 		&_titles {
 			width: 200px;
@@ -130,10 +170,19 @@
 				line-height: 38px;
 				font-weight: 600;
 			}
+			@media (max-width: 740px) {
+				margin-bottom: 20px;
+				padding: 0;
+				width: 100%;
+			}
 		}
 		&_description {
 			padding: 0 30px 0 20px;
 			width: calc(100% - 200px);
+			@media (max-width: 740px) {
+				padding: 0;
+				width: 100%;
+			}
 		}
 		&_close {
 			cursor: pointer;
@@ -142,12 +191,20 @@
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 1;
+			@media (max-width: 740px) {
+				right: 20px;
+				top: 20px;
+				transform: none;
+			}
 		}
 	}
 	.rulings {
 		h2 {
 			font-size: 40px;
 			font-weight: 300;
+			@media (max-width: 1024px) {
+				font-size: 36px;
+			}
 		}
 		.voting-boxes {
 			margin-left: -40px;
@@ -157,6 +214,23 @@
 				margin-bottom: 40px;
 				margin-left: 40px;
 				width: calc(50% - 40px);
+				@media (max-width: 1024px) {
+					margin-bottom: 20px;
+					margin-left: 20px;
+					width: calc(50% - 20px);
+				}
+				@media (max-width: 720px) {
+					margin-left: 0;
+					width: 100%;
+				}
+			}
+			@media (max-width: 1024px) {
+				margin-left: -20px;
+				width: calc(100% + 20px);
+			}
+			@media (max-width: 720px) {
+				margin-left: 0;
+				width: 100%;
 			}
 		}
 	}
@@ -164,14 +238,22 @@
 		background-image: url("/images/footer/bg-closing.png");
 		padding: 15px 30px;
 		&_cols{
-			align-items: center;;
+			align-items: center;
 			display: flex;
-
+			@media (max-width: 720px) {
+				display: block;
+			}
 		}
 		&_title {
 			font-size: 30px;
 			line-height: 32px;
 			width: calc(100% - 212px);
+			@media (max-width: 720px) {
+				font-size: 24px;
+				line-height: 26px;
+				margin-bottom: 20px;
+				width: 100%;
+			}
 		}
 		&_button {
 			width: 212px;
@@ -180,6 +262,10 @@
 				font-size: 20px;
 				font-weight: 400;
 				padding: 15px 0;
+				width: 100%;
+			}
+			@media (max-width: 720px) {
+				max-width: 212px;
 				width: 100%;
 			}
 		}

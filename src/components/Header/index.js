@@ -5,21 +5,27 @@ class HeaderComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			openMenu: false
 		};
 	}
 
 	componentDidMount() {
 	}
 
+	openMenuFn() {
+		this.setState({
+			openMenu: !this.state.openMenu
+		})
+	}
+
 	render() {
 		return (
-			<div className="wrrp-header">
+			<div className={`wrrp-header ${this.state.openMenu ? "open" : null}`}>
 				<div className="container">
 					<h1 className="name-company">
 						Rule of thumb.
 					</h1>
 					<nav className="nav-main">
-
 						<div className="item-nav">
 							<button>
 								Past Trials
@@ -45,6 +51,22 @@ class HeaderComponent extends Component {
 						</div>
 					</nav>
 				</div>
+				<button
+					className="bt-menu-movil"
+					onClick={this.openMenuFn.bind(this)}
+				>
+					{
+						this.state.openMenu ? (
+							<strong>X</strong>
+						) : (
+								<span>&#9776;</span>
+							)
+					}
+				</button>
+				<div
+					className="cover"
+					onClick={this.openMenuFn.bind(this)}
+				></div>
 			</div>
 		);
 	}

@@ -1,7 +1,7 @@
 import {
 	SET_CHARACTERS,
-	LOADING,
-	ERROR,
+	// LOADING,
+	// ERROR,
 	RESET
 } from "../types/charactersTypes";
 
