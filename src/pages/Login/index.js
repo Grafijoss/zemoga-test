@@ -4,7 +4,7 @@ export default class Login extends React.PureComponent {
 		return (
 			<div className="internal-pages">
 				<div className="container">
-					<h1>
+					<h1 className="title-internal">
 						Log In / Sing In
 					</h1>
 				</div>

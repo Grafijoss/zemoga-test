@@ -4,7 +4,7 @@ export default class PastTrials extends React.PureComponent {
 		return (
 			<div className="internal-pages">
 				<div className="container">
-					<h1>
+					<h1 className="title-internal">
 						Past Trials
 					</h1>
 				</div>

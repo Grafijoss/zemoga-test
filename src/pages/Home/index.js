@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import BoxComponent from "../../components/Box";
+// import BoxComponent from "../../components/Box";
 
 import { connect } from "react-redux";
 import * as charactersActions from "../../actions/charactersActions";
+
+import CharstList from "../../components/CharstList";
 
 import "./index.scss";
 
@@ -83,13 +85,13 @@ class HomeComponent extends Component {
 										He's talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up)
 									</p>
 									<div className="top_30"></div>
-									<a className="wiki">
+									<span className="wiki">
 										<img
 											alt="test"
 											src={`${process.env.PUBLIC_URL}/images/icons/icon-wiki.png`}
 										></img>
 										More information
-									</a>
+									</span>
 									<div className="top_40"></div>
 									<h3>What's Your Veredict?</h3>
 								</hgroup>
@@ -156,23 +158,7 @@ class HomeComponent extends Component {
 							</h2>
 						</hgroup>
 						<div className="top_40"></div>
-						<div className="voting-boxes">
-
-							{
-								dataChars.map(char => {
-									return (
-										<div className="voting-boxes_box" key={char.id} >
-											<BoxComponent
-												dataChar={char}
-												handleVotes={(opc) => this.handleVotes(opc)}
-											/>
-										</div>
-									)
-								})
-							}
-
-							<div className="clear"></div>
-						</div>
+						<CharstList dataChars={dataChars} handleVotes={(opc) => this.handleVotes(opc)} />
 						<div className="clear"></div>
 					</section>
 					<section className="add-anyone">

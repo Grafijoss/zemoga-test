@@ -28,7 +28,7 @@ class BoxComponent extends Component {
 		this.setState({
 			voted: true
 		})
-		this.props.handleVotes({
+		this.props.handleVotesList({
 			id: this.props.dataChar.id,
 			opc: this.state.selected
 		});

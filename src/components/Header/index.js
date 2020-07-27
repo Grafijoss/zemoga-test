@@ -35,7 +35,7 @@ class HeaderComponent extends Component {
 					</h1>
 					<nav className="nav-main">
 						<div className="item-nav">
-							<NavLink to="/pasttrials" onClick={this.closeMenuFn.bind(this)}> Past Trials </NavLink>
+							<NavLink to="/pasttrials" onClick={this.closeMenuFn.bind(this)} id="past"> Past Trials </NavLink>
 						</div>
 						<div className="item-nav">
 							<NavLink to="/howwork" onClick={this.closeMenuFn.bind(this)}> How It Works </NavLink>

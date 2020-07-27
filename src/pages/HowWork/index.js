@@ -4,7 +4,7 @@ export default class HowWork extends React.PureComponent {
 		return (
 			<div className="internal-pages">
 				<div className="container">
-					<h1>
+					<h1 className="title-internal">
 						How It Works
 					</h1>
 				</div>
