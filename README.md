@@ -1,3 +1,7 @@
+# Zemoga Test
+
+El proyecto esta creado con **Create React App** como framework de **Javascript** para, **CSS** no se uso ningún framework para demostrar el conocimiento sobre el tema, la data persistente se uso el **redux-persist** que se integra de manera estable con **React** y se realizarón algunas pruebas unitarias de contenidos usando el **Jest y Enzyme** que viene instalado con el **React**
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
